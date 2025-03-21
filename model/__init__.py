@@ -5,6 +5,11 @@ import os
 
 # importando os elementos definidos no modelo
 from model.base import Base
+from model.anime_list import AnimeList
+from model.anime_genres import AnimeGenres
+from model.manga_list import MangaList
+from model.manga_genres import MangaGenres
+from model.genres import Genres
 
 db_path = "database/"
 # Verifica se o diretorio não existe

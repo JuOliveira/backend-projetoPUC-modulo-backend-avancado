@@ -1,28 +1,32 @@
+from dataclasses import dataclass
 from sqlalchemy import Column, String, Integer, Boolean
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, Mapped
+from typing import List
 
 from  model import Base
 from model.anime_genres import AnimeGenres
+from model.genres import Genres
 
+@dataclass
 class AnimeList(Base):
     __tablename__ = 'anime_list'
 
-    id = Column('pk_anime', Integer, primary_key=True)
-    title_romaji = Column(String)
-    title_native = Column(String)
-    title_english = Column(String)
-    description = Column(String)
-    cover_image_medium = Column(String)
-    cover_image_large = Column(String)
-    start_date = Column(String)
-    end_date = Column(String)
-    status = Column(Integer)
-    season = Column(String)
-    episodes = Column(Integer)
-    rating = Column(Integer)
-    user_status = Column(Integer)
-    is_favorite = Column(Boolean)
-    genres = relationship('Genres', secondary=AnimeGenres, back_populates='anime_list')
+    id:int = Column(Integer, primary_key=True)
+    title_romaji:str = Column(String)
+    title_native:str = Column(String)
+    title_english:str = Column(String)
+    description:str = Column(String)
+    cover_image_medium:str = Column(String)
+    cover_image_large:str = Column(String)
+    start_date:str = Column(String)
+    end_date:str = Column(String)
+    status:int = Column(Integer)
+    season:str = Column(String)
+    episodes:int = Column(Integer)
+    rating:int = Column(Integer)
+    user_status:int = Column(Integer)
+    is_favorite:bool = Column(Boolean)
+    genres: Mapped[List[Genres]] = relationship('Genres', secondary=AnimeGenres, back_populates='anime_genres')
 
     def __init__(self, id: int, title_romaji:str, title_native:str, title_english:str, description:str,
                 cover_image_medium:str, cover_image_large:str, start_date:str, end_date:str, status:int,

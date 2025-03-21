@@ -1,9 +1,8 @@
-from sqlalchemy import Column, ForeignKey, Integer
+from sqlalchemy import Column, ForeignKey, Integer, Table
 
 from  model import Base
 
-class MangaGenres(Base):
-   __tablename__ = 'manga_genres'
-
-   anime_id = Column(Integer, ForeignKey('manga_list.id'))
-   genres_id = Column(Integer, ForeignKey('genres.id'))
+MangaGenres = Table('manga_genres', Base.metadata , 
+   Column('manga_id', Integer, ForeignKey('manga_list.id'), primary_key=True),
+   Column('genres_id', Integer, ForeignKey('genres.id'), primary_key=True)   
+)

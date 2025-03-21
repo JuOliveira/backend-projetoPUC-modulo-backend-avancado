@@ -1,10 +1,10 @@
-from sqlalchemy import Column, ForeignKey, Integer
+from dataclasses import dataclass
+from sqlalchemy import Column, ForeignKey, Integer, Table
 from sqlalchemy.orm import relationship
 
 from  model import Base
 
-class AnimeGenres(Base):
-   __tablename__ = 'anime_genres'
-
-   anime_id = Column(Integer, ForeignKey('anime_list.id'))
-   genres_id = Column(Integer, ForeignKey('genres.id'))
+AnimeGenres = Table('anime_genres', Base.metadata, 
+   Column('anime_id', Integer, ForeignKey('anime_list.id'), primary_key=True),
+   Column('genres_id', Integer, ForeignKey('genres.id'), primary_key=True)   
+)
