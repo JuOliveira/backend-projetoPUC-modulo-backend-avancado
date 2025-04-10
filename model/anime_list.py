@@ -20,17 +20,17 @@ class AnimeList(Base):
     cover_image_large:str = Column(String)
     start_date:str = Column(String)
     end_date:str = Column(String)
-    status:int = Column(Integer)
+    status:str = Column(String)
     season:str = Column(String)
     episodes:int = Column(Integer)
     rating:int = Column(Integer)
-    user_status:int = Column(Integer)
+    user_status:str = Column(String)
     is_favorite:bool = Column(Boolean)
     genres: Mapped[List[Genres]] = relationship('Genres', secondary=AnimeGenres, back_populates='anime_genres')
 
     def __init__(self, id: int, title_romaji:str, title_native:str, title_english:str, description:str,
-                cover_image_medium:str, cover_image_large:str, start_date:str, end_date:str, status:int,
-                season:str, episodes:int, rating:int, user_status:int, is_favorite:bool):
+                cover_image_medium:str, cover_image_large:str, start_date:str, end_date:str, status:str,
+                season:str, episodes:int, rating:int, user_status:str, is_favorite:bool):
         self.id = id
         self.title_romaji = title_romaji
         self.title_native = title_native

@@ -12,11 +12,11 @@ class AnimeSchema(BaseModel):
     cover_image_large: str
     start_date: str
     end_date: str
-    status: int
+    status: str
     season: str
     episodes: int
     rating: int
-    user_status: int
+    user_status: str
     is_favorite: bool
     genres: List[str]
 

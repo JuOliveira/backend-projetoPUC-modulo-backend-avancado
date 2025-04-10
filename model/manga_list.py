@@ -20,19 +20,19 @@ class MangaList(Base):
     cover_image_large:str = Column(String)
     start_date:str = Column(String)
     end_date:str = Column(String)
-    status:int = Column(Integer)
+    status:str = Column(String)
     volumes:int = Column(Integer)
     chapters:int = Column(Integer)
     story:str = Column(String)
     art:str = Column(String)
     rating:int = Column(Integer)
-    user_status:int = Column(Integer)
+    user_status:str = Column(String)
     is_favorite:bool = Column(Boolean)
     genres:Mapped[List[Genres]] = relationship('Genres', secondary=MangaGenres, back_populates='manga_genres')
 
     def __init__(self, id:int, title_romaji:str, title_native:str, title_english:str, description:str,
                 cover_image_medium:str, cover_image_large:str, start_date:str, end_date:str, status:int,
-                volumes:int, chapters:int, story:str, art:str, rating:int, user_status:int, is_favorite:bool):
+                volumes:int, chapters:int, story:str, art:str, rating:int, user_status:str, is_favorite:bool):
         self.id = id
         self.title_romaji = title_romaji
         self.title_native = title_native

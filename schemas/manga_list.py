@@ -11,13 +11,13 @@ class MangaSchema(BaseModel):
     cover_image_large: str
     start_date: str 
     end_date: str
-    status: int 
+    status: str 
     volumes: int 
     chapters: int 
     story: str
     art: str 
     rating: int
-    user_status: int 
+    user_status: str 
     is_favorite: bool 
     genres: List[str]
 

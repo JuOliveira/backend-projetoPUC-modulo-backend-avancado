@@ -13,7 +13,7 @@ from model.genres import Genres
 from schemas.anime_list import AnimeListSchema, AnimeSchema, AnimeSearchSchema
 from schemas.manga_list import MangaSchema, MangaListSchema, MangaSearchSchema
 
-info = Info(title='AnimeTracker', version='1.0.0')
+info = Info(title='AniMangaTracker', version='1.0.0')
 app = OpenAPI(__name__, info=info)
 CORS(app)
 
