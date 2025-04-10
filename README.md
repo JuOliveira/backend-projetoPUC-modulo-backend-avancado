@@ -66,7 +66,6 @@ docker run -d -p 5000:5000 animanga-tracker-api
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # no Windows: venv\Scripts\activate
 ```
 Ative o ambiente:
 
@@ -104,9 +103,9 @@ flask run --host 0.0.0.0 --port 5000
 |--------|----------------------------------|----------------------------------------|
 | GET    | `/anime_list`                    | Retorna a lista de animes do usuário   |
 | POST   | `/anime`                         | Adiciona novo anime à lista do usuário |
-| DELETE | `/anime/<id>`                    | Remove um anime da lista do usuário    |
-| GET    | `/anime/<id>`                    | Retorna um anime da lista do usuário   |
-| PUT   | `/anime/<id>`                     | Edita um anime da lista do usuário     |
+| DELETE | `/anime?id=<id>`                 | Remove um anime da lista do usuário    |
+| GET    | `/anime?id=<id>`                 | Retorna um anime da lista do usuário   |
+| PUT    | `/anime?id=<id>`                 | Atualiza um anime da lista do usuário  |
 
 ---
 
