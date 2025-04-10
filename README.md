@@ -106,6 +106,11 @@ flask run --host 0.0.0.0 --port 5000
 | DELETE | `/anime?id=<id>`                 | Remove um anime da lista do usuário    |
 | GET    | `/anime?id=<id>`                 | Retorna um anime da lista do usuário   |
 | PUT    | `/anime?id=<id>`                 | Atualiza um anime da lista do usuário  |
+| GET    | `/manga_list`                    | Retorna a lista de mangás do usuário   |
+| POST   | `/manga`                         | Adiciona novo mangá à lista do usuário |
+| DELETE | `/manga?id=<id>`                 | Remove um mangá da lista do usuário    |
+| GET    | `/manga?id=<id>`                 | Retorna um mangá da lista do usuário   |
+| PUT    | `/manga?id=<id>`                 | Atualiza um mangá da lista do usuário  |
 
 ---
 
