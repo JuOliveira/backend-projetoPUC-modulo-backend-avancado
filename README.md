@@ -15,7 +15,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias e versões:
 - **SQLAlchemy** 2.0.39 – ORM para integração com banco de dados.
 - **SQLite** - Banco de Dados.
 - **OpenApi 3** - Documentação da API.
-- **Docker** latest – Containerização do ambiente de execução.
+- **Docker** – Containerização do ambiente de execução.
 
 ---
 
