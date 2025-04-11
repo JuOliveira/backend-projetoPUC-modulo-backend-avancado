@@ -1,8 +1,8 @@
 # 📺 AniMangaTracker - API & Banco de Dados
 
-**AniMangaTracker** é a API backend de um aplicativo que permite aos usuários organizarem suas listas de animes e mangás de forma personalizada, além de acompanhar a programação de lançamentos de animes ao longo do ano.
+**AniMangaTrackerAPI** é a API do aplicativo **AniMangaTracker** que permite aos usuários organizarem suas listas de animes e mangás de forma personalizada, além de acompanhar a programação de lançamentos de animes ao longo do ano.
 
-Esta API é responsável por armazenar e gerenciar as listas de anime e mangá de cada usuário, garantindo persistência dos dados e integração com o frontend do app. O projeto foi desenvolvido utilizando **Flask 3.1.0** e **SQLAlchemy 2.0.39**, com suporte total a **Docker** para execução em ambiente isolado.
+Esta API é responsável por armazenar e gerenciar as listas de anime e mangá de cada usuário, garantindo persistência dos dados e integração com o frontend do app.
 
 ---
 
@@ -11,8 +11,10 @@ Esta API é responsável por armazenar e gerenciar as listas de anime e mangá d
 Este projeto foi desenvolvido utilizando as seguintes tecnologias e versões:
 
 - **Python** 3.11.0 – Linguagem principal do projeto.
-- **Flask** 3.1.0 – Framework leve para construção de APIs .
-- **SQLAlchemy** 2.0.39 – ORM para integração com banco de dados .
+- **Flask** 3.1.0 – Framework para construção de APIs .
+- **SQLAlchemy** 2.0.39 – ORM para integração com banco de dados.
+- **SQLite** - Banco de Dados.
+- **OpenApi 3** - Documentação da API.
 - **Docker** latest – Containerização do ambiente de execução.
 
 ---
@@ -103,17 +105,12 @@ flask run --host 0.0.0.0 --port 5000
 |--------|----------------------------------|----------------------------------------|
 | GET    | `/anime_list`                    | Retorna a lista de animes do usuário   |
 | POST   | `/anime`                         | Adiciona novo anime à lista do usuário |
-| DELETE | `/anime?id=<id>`                 | Remove um anime da lista do usuário    |
+| PUT    | `/anime`                         | Atualiza um anime da lista do usuário  |
 | GET    | `/anime?id=<id>`                 | Retorna um anime da lista do usuário   |
-| PUT    | `/anime?id=<id>`                 | Atualiza um anime da lista do usuário  |
+| DELETE | `/anime?id=<id>`                 | Remove um anime da lista do usuário    |
 | GET    | `/manga_list`                    | Retorna a lista de mangás do usuário   |
 | POST   | `/manga`                         | Adiciona novo mangá à lista do usuário |
-| DELETE | `/manga?id=<id>`                 | Remove um mangá da lista do usuário    |
+| PUT    | `/manga`                         | Atualiza um mangá da lista do usuário  |
 | GET    | `/manga?id=<id>`                 | Retorna um mangá da lista do usuário   |
-| PUT    | `/manga?id=<id>`                 | Atualiza um mangá da lista do usuário  |
+| DELETE | `/manga?id=<id>`                 | Remove um mangá da lista do usuário    |
 
----
-
-## 📃 Licença
-
-Este projeto está licenciado sob os termos da **MIT License**.  
